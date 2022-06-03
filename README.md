@@ -1,6 +1,12 @@
 # Pingou!
-**⚠️Aviso⚠️**
+
+------------
+** ⚠️Aviso⚠️**
 	**O site ainda não está online, previsão para o funcionamento é dia 13/06/2022.**
+
+------------
+
+
 1. **Sobre**
 	Foi idealizado como um projeto de estudo para portfolio, pois isso possiveis erros podem aparecer.
 2. **O que é ?**
