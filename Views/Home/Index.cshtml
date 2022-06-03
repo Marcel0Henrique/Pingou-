@@ -1,0 +1,20 @@
+﻿@model EncomendaModel
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="container-fluid justify-content-center" style="margin-top: 15%;">
+
+    <div class="text-center text-white">
+        <h1 class="display-4 fw-bolder mb-0">Pingou!</h1>
+        <p class="fs-4 fw-light mt-0 mb-4">Rastreio de encomendas de uma forma fácil!</p>
+    </div>
+    <div class="justify-content-center">
+        <form asp-controller="Encomenda" asp-action="Index" method="post">
+            <div class="input-group justify-content-center text-center">
+                <input type="text" asp-for="Codigo" class="form-control border-input form-control-lg" style="max-width:40%;" placeholder="Digite seu código de rastreio" required>
+                <button type="submit" class="btn btn-purple border-button btn-lg"><i class="bi bi-search"></i> Pesquisar</button>
+            </div>
+        </form>
+    </div>
+</div>

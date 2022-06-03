@@ -1,0 +1,160 @@
+@model PacoteModel
+@{
+    ViewData["Title"] = "Encomenda";
+    string[] statusFrases = new string[]{
+"Corre para o abraço",
+"Pode ir ficar esperando na calçada",
+"Apenas sente e espere",
+"Algum dia chega",
+};
+
+    string[] statusEncomenda = new string[]{
+"Objeto entregue ao destinatário",
+"Objeto saiu para entrega ao destinatário",
+"Objeto encaminhado",
+"Fiscalização aduaneira finalizada",
+"Objeto recebido pelos Correios do Brasil",
+"Objeto postado"
+};
+}
+
+<div class="container text-white mt-5 mb-5">
+    <h1 class="fs-1 text pt-2 fw-bolder text-center"><i class="bi bi-box-seam text-primary"></i> Encomenda @Model.Codigo
+    </h1>
+    <h2 class="text-center fw-semibold fs-2 ">
+        @if (Model.Eventos[0].Status == statusEncomenda[0])
+        {
+            <span>@statusFrases[0]</span>
+        }
+        @if (Model.Eventos[0].Status == statusEncomenda[1])
+        {
+            <span>@statusFrases[1]</span>
+        }
+        @if (Model.Eventos[0].Status == statusEncomenda[2])
+        {
+            <span>@statusFrases[2]</span>
+        }
+        @if (Model.Eventos[0].Status == statusEncomenda[3])
+        {
+            <span>@statusFrases[3]</span>
+        }
+    </h2>
+</div>
+
+<div class="container-fluid pt-3">
+    <div class="card">
+        <div class="card-body pl-3">
+            <p class="fw-bolder fs-1 mb-0  text-center text-purple">Status</p>
+
+
+            <ul class="list-unstyled pt-1 ms-5">
+                <li>
+
+                    @foreach (var item in Model.Eventos)
+                    {
+                        if (item.Status == statusEncomenda[0])
+                        {
+                            string[] local = item.Local.Split("/");
+                            <hr class="me-5">
+                            <ul class="list-unstyled">
+                                <li class="fs-6 fw-light ms-4">Data: @item.Data<span class="ms-3 me-3">|</span>Hora: @item.Hora
+                                </li>
+                                <li class="fs-4 text-success fw-bolder"><i class="bi bi-check2-circle me-1"></i>@item.Status
+                                </li>
+                                <li class="fs-5 fw-light ms-4">@local[0] - @local[1]/@local[2]</li>
+                                <hr class="me-5">
+                            </ul>
+                        }
+
+                        if (item.Status == statusEncomenda[1])
+                        {
+                            string[] local = item.Local.Split("/");
+                            <hr class="me-5">
+                            <ul class="list-unstyled">
+                                <li class="fs-6 fw-light ms-4">Data: @item.Data<span class="ms-3 me-3">|</span>Hora: @item.Hora
+                                </li>
+                                <li class="fs-4 text-primary fw-bolder"><i class="bi bi-box2 me-1"></i>@item.Status
+                                </li>
+                                <li class="fs-5 fw-light ms-4">@local[0] - @local[1]/@local[2]</li>
+                                <hr class="me-5">
+                            </ul>
+                        }
+
+                        if (item.Status == statusEncomenda[2])
+                        {
+                            string[] local = item.Local.Split("/");
+                            <hr class="me-5">
+                            <ul class="list-unstyled">
+                                <li class="fs-6 fw-light ms-4">Data: @item.Data<span class="ms-3 me-3">|</span>Hora: @item.Hora
+                                </li>
+                                <li class="fs-4 text-black fw-bolder"><i class="bi bi-truck me-1"></i>@item.Status
+                                </li>
+                                <li class="fs-5 fw-light ms-4">@local[0] - @local[1]/@local[2]</li>
+                                <hr class="me-5">
+                            </ul>
+                        }
+
+                        if (item.Status == statusEncomenda[3])
+                        {
+                            string[] local = item.Local.Split("/");
+                            <hr class="me-5">
+                            <ul class="list-unstyled">
+                                <li class="fs-6 fw-light ms-4">Data: @item.Data<span class="ms-3 me-3">|</span>Hora: @item.Hora
+                                </li>
+                                <li class="fs-4 text-danger fw-bolder"><i class="bi bi-truck me-1"></i>@item.Status<span class="ms-2"><a href="https://apps.correios.com.br/portalimportador/" target="_blank"><i class="bi bi-arrow-up-right-square text-black"></i></a></span>
+                                </li>
+                                <li class="fs-5 fw-light ms-4">@local[0] - @local[1]/@local[2]</li>
+                                <hr class="me-5">
+                            </ul>
+                        }
+
+                        if (item.Status == statusEncomenda[4])
+                        {
+                            string[] local = item.Local.Split("/");
+                            <hr class="me-5">
+                            <ul class="list-unstyled">
+                                <li class="fs-6 fw-light ms-4">Data: @item.Data<span class="ms-3 me-3">|</span>Hora: @item.Hora
+                                </li>
+                                <li class="fs-4 text-warning fw-bolder"><i class="bi bi-boxes me-1"></i>@item.Status
+                                </li>
+                                <li class="fs-5 fw-light ms-4">@local[0] - @local[1]/@local[2]</li>
+                                <hr class="me-5">
+                            </ul>
+                        }
+
+                        if (item.Status == statusEncomenda[5])
+                        {
+                            string[] local = item.Local.Split("/");
+                            <hr class="me-5">
+                            <ul class="list-unstyled">
+                                <li class="fs-6 fw-light ms-4">Data: @item.Data<span class="ms-3 me-3">|</span>Hora: @item.Hora
+                                </li>
+                                <li class="fs-4 text-secondary fw-bolder"><i class="bi bi-postage me-1"></i>@item.Status
+                                </li>
+                                <li class="fs-5 fw-light ms-4">@local[0] - @local[1]/@local[2]</li>
+                                <hr class="me-5">
+                            </ul>
+                        }
+
+                        if (item.Status != statusEncomenda[0] && item.Status != statusEncomenda[1] && item.Status !=
+                        statusEncomenda[2] && item.Status != statusEncomenda[3] && item.Status != statusEncomenda[4] &&
+                        item.Status != statusEncomenda[5])
+                        {
+                            string[] local = item.Local.Split("/");
+                            <hr class="me-5">
+                            <ul class="list-unstyled">
+                                <li class="fs-6 fw-light ms-4">Data: @item.Data<span class="ms-3 me-3">|</span>Hora: @item.Hora
+                                </li>
+                                <li class="fs-4 text-secondary fw-bolder"><i class="bi bi-question-circle me-1"></i>@item.Status
+                                </li>
+                                <li class="fs-5 fw-light ms-4">@local[0] - @local[1]/@local[2]</li>
+                                <hr class="me-5">
+                            </ul>
+                        }
+                    }
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
