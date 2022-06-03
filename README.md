@@ -1,4 +1,4 @@
-# Pingou!
+# 🚛Pingou!
 
 ------------
 ** ⚠️Aviso⚠️**
@@ -8,9 +8,9 @@
 
 
 1. **Sobre**
-	Foi idealizado como um projeto de estudo para portfolio, pois isso possiveis erros podem aparecer.
+	- Foi idealizado como um projeto de estudo para portfolio, pois isso possiveis erros podem aparecer.
 2. **O que é ?**
-	É um sistema de rastreio de encomendas que utiliza a API do [Linke & Track](https://linketrack.com/ "Linke & Track")
+	- É um sistema de rastreio de encomendas que utiliza a API do [Linke & Track](https://linketrack.com/ "Linke & Track")
 3. **O que faz ?**
 	- Rastreia encomendas e mostra o seu status.
 4. **o que está por vir ?**
