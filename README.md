@@ -2,7 +2,7 @@
 
 ------------
 ** ⚠️Aviso⚠️**
-	**O site ainda não está online, previsão para o funcionamento é dia 13/06/2022.**
+	<p>**O site ainda não está online, previsão para o funcionamento é dia 13/06/2022.**</p>
 
 ------------
 
